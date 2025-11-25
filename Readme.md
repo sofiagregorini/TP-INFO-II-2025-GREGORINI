@@ -45,9 +45,9 @@ Cuando la luminosidad ambiente desciende por debajo del valor establecido, el mi
 
 # Esquemático en Proteus
 
-![image](https://github.com/user-attachments/assets/361d70f4-db1a-4fd5-9a82-ae10f082d451)
+
 
 # Video funcionando
 
-https://www.youtube.com/watch?v=LIuPFKk9Mck
+
 
