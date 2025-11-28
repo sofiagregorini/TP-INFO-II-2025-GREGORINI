@@ -5,9 +5,9 @@
 
 // Prototipos de funciones de hardware
 void inicializar_hardware(void);
-float leer_temperatura(void);
-void activar_ventilador(void);
-void desactivar_ventilador(void);
+float leer_luminosidad(void);
+void activar_luz(void);
+void desactivar_luz(void);
 unsigned char leer_boton(void);
 void esperar_soltar_boton(void);
 
