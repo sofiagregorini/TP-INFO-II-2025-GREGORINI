@@ -42,7 +42,9 @@ Cuando la luminosidad ambiente desciende por debajo del valor establecido, el mi
 ♦Luz de emergencia:LED
 
 # Esquemático en Proteus
-![Uploading image.png…]()
+
+<img width="1100" height="656" alt="image" src="https://github.com/user-attachments/assets/cbb37611-e357-48d1-aefa-f503e8f56865" />
+
 
 
 
