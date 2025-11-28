@@ -35,13 +35,11 @@ Cuando la luminosidad ambiente desciende por debajo del valor establecido, el mi
 
 # Materiales Utilizados
 
-♦Sensor de luminosidad: 
+♦Sensor de luminosidad: LDR
 
 ♦Microcontrolador : ATMEGA128
 
-♦Transistor: NPN 2N2222
-
-♦Luz de emergencia:
+♦Luz de emergencia:LED
 
 # Esquemático en Proteus
 
