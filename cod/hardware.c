@@ -37,22 +37,22 @@ void inicializar_hardware(void) {
     
     set_pin(avr_GPIOD_OUT, (1 << PIN_BOTON));
     
-    // estructura de GPIO para el ventilador como salida
+    // estructura de GPIO para la luz como salida
     GpioInitStructure_AVR config_ventilador = {
         .port = avr_GPIO_D,
         .modo = avr_GPIO_mode_Output,
-        .pines = (1 << PIN_VENTILADOR)
+        .pines = (1 << PIN_LUZ)
     };
-    init_gpio(config_ventilador);
+    init_gpio(config_luz);
     
-    // Aseguro que el ventilador esté apagado inicialmente
-    clear_pin(avr_GPIOD_OUT, (1 << PIN_VENTILADOR));
+    // Aseguro que la luz esté apagada inicialmente
+    clear_pin(avr_GPIOD_OUT, (1 << PIN_LUZ));
     
     // Inicializar ADC
     AdcInitStructure_AVR config_adc = {
         .mode = avr_ADC_MODE_Single_Conversion,
         .prescaler = avr_ADC_Prescaler_64,
-        .channel = (ADC_CANAL_t)PIN_SENSOR_TEMPERATURA, 
+        .channel = (ADC_CANAL_t)PIN_SENSOR_LUMINOSIDAD, 
         .resolution = avr_ADC_RES_10Bit,
         .reference = avr_ADC_REF_AVcc,
         .avr_adc_handler = 0
@@ -62,25 +62,25 @@ void inicializar_hardware(void) {
 }
 
 
-float leer_temperatura(void) {
+float leer_luminosidad(void) {
     
-    avr_ADC_Value_t valor_adc = leer_ADC((ADC_CANAL_t)PIN_SENSOR_TEMPERATURA);
+    avr_ADC_Value_t valor_adc = leer_ADC((ADC_CANAL_t)PIN_SENSOR_LUMINOSIDAD);
     
-    // Convierto el valor ADC a temperatura 
+ 
     
-    float temperatura = (valor_adc * 5.0 / 1024.0) * 100.0;
+    float luminosidad = (valor_adc  / 1024.0) * 100.0;
     
-    return temperatura;
+    return luminosidad;
 }
 
 
-void activar_ventilador(void) {
-    set_pin(avr_GPIOD_OUT, (1 << PIN_VENTILADOR));
+void activar_luz(void) {
+    set_pin(avr_GPIOD_OUT, (1 << PIN_LUZ));
 }
 
 
-void desactivar_ventilador(void) {
-    clear_pin(avr_GPIOD_OUT, (1 << PIN_VENTILADOR));
+void desactivar_luz(void) {
+    clear_pin(avr_GPIOD_OUT, (1 << PIN_LUZ));
 }
 
 
